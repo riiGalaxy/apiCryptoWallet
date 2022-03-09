@@ -23,7 +23,6 @@ const controller = (() => {
   router.get("/", async (req, res) => {
     const getTime = Date.now();
     if (getTime - memoryCoinMarket.date > 3600000) {
-      console.log("PIDO A LA APIIIIIIIII");
       try {
         const { data } = await coinMarketService.getListCrypto();
 
@@ -40,8 +39,6 @@ const controller = (() => {
         });
       }
     } else {
-      console.log("MEMORIAAAAAAAAAAAAAAAAAA");
-
       return res.status(200).json(memoryCoinMarket.data);
     }
   });
