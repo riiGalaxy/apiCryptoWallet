@@ -110,6 +110,7 @@ const controller = (() => {
   //delete investment
   router.delete("/investment/:id", async (req, res) => {
     const { id } = req.params;
+    console.log("api borrandoooooo");
 
     try {
       const investment = await PortfolioModel.deleteOne({ _id: id });
